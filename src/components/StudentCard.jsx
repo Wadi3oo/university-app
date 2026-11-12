@@ -59,7 +59,7 @@ function StudentCard(props) {
               <p><strong>Filière :</strong> {filiere || "—"}</p>
               <p><strong>Année :</strong> {anneeEtude || "—"}</p>
               <p><strong>Groupe :</strong> {groupe || "—"}</p>
-              <p><strong>Ville :</strong> {ville || "—"}</p>
+              <p><strong>ville :</strong> {ville || "—"}</p>
             </div>
           )}
 
