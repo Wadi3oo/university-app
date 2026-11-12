@@ -1,13 +1,21 @@
-import "./Navbar.css";
+import "./navbar.css";
 
-function Navbar() {
+function Navbar({ activeTab, setActiveTab }) {
+  const tabs = ["Tous", "1ère année", "2ème année", "3ème année"];
+
   return (
     <nav className="navbar">
-      <ul className="nav-links">
-        <li><a href="#A" className="active">GLSI A</a></li>
-        <li><a href="#B">GLSI B</a></li>
-        <li><a href="#C">GLSI C</a></li>
-        <li><a href="#D">GLSI D</a></li>
+      <ul className="nav-tabs">
+        {tabs.map((tab) => (
+          <li key={tab}>
+            <button 
+              className={`nav-tab-btn ${activeTab === tab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          </li>
+        ))}
       </ul>
     </nav>
   );

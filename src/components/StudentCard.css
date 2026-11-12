@@ -1,55 +1,137 @@
 .card {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  background: rgba(27, 38, 59, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(72, 202, 228, 0.3);
+  padding: 1.75rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 340px;
   text-align: center;
-  transition: transform 0.2s ease-in-out;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
+  border-color: #00B4D8;
   transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 180, 216, 0.3);
 }
 
 .profile-img {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
-  border: 3px solid #007bff;
+  margin: 0 auto 0.75rem auto;
+  border: 3px solid #00B4D8;
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
 }
 
-.card h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: #1a252f;
+.card-subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #90E0EF;
+  margin-bottom: 0.3rem;
+}
+
+.student-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
 }
 
 .info {
   text-align: left;
-  margin: 1rem 0;
-  color: #4a5568;
+  margin: 0.5rem 0 1.25rem 0;
+  font-size: 0.9rem;
+  color: #CAF0F8;
+  background: rgba(11, 19, 43, 0.8);
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 3px solid #00B4D8;
 }
 
 .info p {
-  margin: 0.4rem 0;
-  font-size: 0.9rem;
+  margin: 0.5rem 0;
 }
 
-.btn-contact {
-  background-color: #007bff;
-  color: white;
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.edit-form input {
+  background: #0B132B;
+  border: 1px solid #48CAE4;
+  color: #FFFFFF;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+}
+
+.btn-save {
+  background: #2A9D8F;
+  color: #FFFFFF;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.btn-toggle {
+  background: rgba(72, 202, 228, 0.15);
+  color: #90E0EF;
+  border: 1px solid #48CAE4;
+  padding: 0.75rem;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-weight: 600;
   width: 100%;
-  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+  margin-top: auto;
+  transition: all 0.2s ease;
 }
 
-.btn-contact:hover {
-  background-color: #0056b3;
+.btn-toggle:hover {
+  background: #00B4D8;
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.5);
 }
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 0.6rem 0.3rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.btn-contact { background-color: #0077B6; }
+.btn-contact:hover { background-color: #0096C7; }
+
+.btn-edit { background-color: #F4A261; }
+.btn-edit:hover { background-color: #E76F51; }
+
+.btn-delete { background-color: #E63946; }
+.btn-delete:hover { background-color: #D62828; }

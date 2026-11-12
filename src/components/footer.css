@@ -1,18 +1,20 @@
 .footer {
-  background-color: #1a252f;
-  color: #bdc3c7;
+  background: rgba(11, 19, 43, 0.95);
+  border-top: 1px solid rgba(72, 202, 228, 0.3);
+  color: #CAF0F8;
   padding: 1.5rem 1rem;
   text-align: center;
-  margin-top: auto;
   font-size: 0.9rem;
+  margin-top: auto;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.footer-content p {
+.footer p {
   margin: 0.4rem 0;
 }
 
-.footer .copyright {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: #7f8c8d;
+.footer strong {
+  color: #00B4D8;
+  letter-spacing: 1px;
 }

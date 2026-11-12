@@ -1,13 +1,12 @@
-import "./Footer.css";
+import "./footer.css";
 
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <p><strong>Contact Université:</strong> ISIMA </p>
-        <p>Adresse: Sidi Massaoud  </p>
-      </div>
+      <p>Contact Université: <strong>ISIMA</strong></p>
+      <p>Adresse: Sidi Massaoud</p>
     </footer>
   );
 }
+
 export default Footer;

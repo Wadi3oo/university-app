@@ -1,10 +1,10 @@
-import "./Header.css";
+import "./header.css";
 
 function Header() {
   return (
     <header className="header">
-      <h1>ISIMA </h1>
-      <p className="subtitle">Etudiants</p>
+      <h1>ISIMA</h1>
+      <p>Étudiants</p>
     </header>
   );
 }
