@@ -1,0 +1,114 @@
+.add-form {
+  background: rgba(27, 38, 59, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid #48CAE4;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.add-form h3 {
+  color: #90E0EF;
+  margin-top: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #CAF0F8;
+  font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select {
+  background: #0B132B;
+  border: 1px solid #48CAE4;
+  color: #FFFFFF;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #00B4D8;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.4);
+  outline: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  color: #CAF0F8;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.validbtn {
+  flex: 1;
+  background: linear-gradient(135deg, #0077B6 0%, #095969 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 119, 182, 0.4);
+  transition: all 0.3s ease;
+}
+
+.validbtn:hover {
+  box-shadow: 0 6px 20px rgba(17, 63, 156, 0.6);
+  transform: translateY(-4px);
+}
+
+.closebtn {
+  background: #949aa4;
+  color: #03090a;
+  border: 1px solid #48CAE4;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.closebtn:hover {
+  background: #27374D;
+  color: #FFFFFF;
+}

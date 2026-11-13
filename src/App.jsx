@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/header.jsx";
 import Navbar from "./components/navbar.jsx";
 import StudentCard from "./components/StudentCard.jsx";
+import StudentForm from "./components/studentform.jsx"; // Import du nouveau composant
 import Footer from "./components/footer.jsx";
 import avatarImg from "./assets/do3.jpg";
 
@@ -13,7 +14,7 @@ function App() {
       nom: "Oueslati",
       email: "oueslati@gmail.com",
       telephone: "+216 95 123 211",
-      filiere: "GLSI",
+      filiere: "Génie Logiciel et Systèmes d'Information",
       anneeEtude: "2ème année",
       groupe: "GLSI D",
       ville: "Mahdia",
@@ -25,37 +26,9 @@ function App() {
   const [search, setSearch] = useState("");
   const [showForm, setShowForm] = useState(false);
 
-  const [formData, setFormData] = useState({
-    prenom: "", 
-    nom: "", 
-    email: "", 
-    telephone: "", 
-    filiere: "GLSI", 
-    anneeEtude: "1ère année",
-    groupe: "", 
-    ville: "", 
-    image: avatarImg
-  });
-
-  function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
-
-  function handleImageChange(e) {
-    const file = e.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setFormData({ ...formData, image: imageUrl });
-    }
-  }
-
-  function ajouterEtudiant(e) {
-    e.preventDefault();
-    setEtudiants([...etudiants, formData]);
+  function ajouterEtudiant(nouvelEtudiant) {
+    setEtudiants([...etudiants, nouvelEtudiant]);
     setShowForm(false);
-    setFormData({
-      prenom: "", nom: "", email: "", telephone: "", filiere: "GLSI", anneeEtude: "1ère année", groupe: "", ville: "", image: avatarImg
-    });
   }
 
   function supprimerEtudiant(email) {
@@ -81,66 +54,22 @@ function App() {
         <div className="toolbar">
           <input 
             type="text"
-            className="barbar"
+            className="search-input"
             placeholder="Rechercher..." 
             value={search} 
             onChange={(e) => setSearch(e.target.value)} 
           />
-          <button className="ajout" onClick={() => setShowForm(!showForm)}>
+          <button className="btn-primary" onClick={() => setShowForm(!showForm)}>
             {showForm ? "Fermer" : "+ Ajouter"}
           </button>
         </div>
 
+        {/* Utilisation propre du composant StudentForm */}
         {showForm && (
-          <form onSubmit={ajouterEtudiant} className="add-form">
-            <input name="prenom" placeholder="Prénom" value={formData.prenom} onChange={handleChange} required />
-            <input name="nom" placeholder="Nom" value={formData.nom} onChange={handleChange} required />
-            <input name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-            <input name="telephone" placeholder="Téléphone" value={formData.telephone} onChange={handleChange} required />
-            <input name="filiere" placeholder="Filière" value={formData.filiere} onChange={handleChange} required />
-            
-            {/* Boutons radio pour l'année d'étude */}
-            <div className="radio-group" style={{ color: "#fff", display: "flex", gap: "15px", alignItems: "center", margin: "5px 0" }}>
-              <label>Année :</label>
-              <label>
-                <input 
-                  type="radio" 
-                  name="anneeEtude" 
-                  value="1ère année" 
-                  checked={formData.anneeEtude === "1ère année"} 
-                  onChange={handleChange} 
-                /> 1ère année
-              </label>
-              <label>
-                <input 
-                  type="radio" 
-                  name="anneeEtude" 
-                  value="2ème année" 
-                  checked={formData.anneeEtude === "2ème année"} 
-                  onChange={handleChange} 
-                /> 2ème année
-              </label>
-              <label>
-                <input 
-                  type="radio" 
-                  name="anneeEtude" 
-                  value="3ème année" 
-                  checked={formData.anneeEtude === "3ème année"} 
-                  onChange={handleChange} 
-                /> 3ème année
-              </label>
-            </div>
-
-            <input name="groupe" placeholder="Groupe" value={formData.groupe} onChange={handleChange} required />
-            <input name="ville" placeholder="Ville" value={formData.ville} onChange={handleChange} />
-            
-            <div>
-              <label>Photo de profil :</label>
-              <input type="file" accept="image/*" onChange={handleImageChange} />
-            </div>
-            
-            <button type="submit" className="validbtn">Valider</button>
-          </form>
+          <StudentForm 
+            onAjouterEtudiant={ajouterEtudiant} 
+            onClose={() => setShowForm(false)} 
+          />
         )}
 
         <div className="card-container">
